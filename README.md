@@ -1,5 +1,5 @@
 ## Team Win Recovery Project : PD2165
-![iQOO U5](https://2c.zol-img.com.cn/product/221_1200x900/824/ceOlpxNWHk2LY.jpg "iQOO U5")
+![iQOO U5](https://missuo.ru/file/51e42c6552e2f6be46059.jpg "iQOO U5")
 
 
 | Feature                 | Specification                                                              |
