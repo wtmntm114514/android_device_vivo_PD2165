@@ -1,0 +1,121 @@
+on early-boot
+    start qseecomd
+    start cryptfshw-1-0
+    insmod /vendor/lib/modules/vivo-fuel_summary.ko
+    insmod /vendor/lib/modules/vivo-chg-cms.ko
+    insmod /vendor/lib/modules/bq25890h-charger.ko
+    insmod /vendor/lib/modules/qcom-qpnp-ti.ko
+    insmod /vendor/lib/modules/dwc3-vtcpc.ko
+    insmod /vendor/lib/modules/qcom-qpnp-qg.ko
+    insmod /vendor/lib/modules/qpnp-smb5-main.ko
+    insmod /vendor/lib/modules/sensors_class.ko
+    insmod /vendor/lib/modules/vivo_mb.ko
+    insmod /vendor/lib/modules/vivo_ts.ko
+
+#vivo dash add for init.recovery.touch.rc begin
+#on boot
+#    start vts_app_recovery
+#vivo dash add for init.recovery.touch.rc end
+
+# just boot in fastboot mode, fastbootd service need vendor.boot-hal-1-0 & health-hal-2-0
+on property:recovery.fastboot_mode=1
+    start vendor.boot-hal-1-0
+    start health-hal-2-0
+
+on property:recovery.service=1
+    start keymaster-4-0
+    start gatekeeper-1-0
+    start keystore2
+    #wait_for_prop hwservicemanager.ready true
+    exec_start wait_for_keymaster
+    start guardianangle
+    setprop recovery.state.services.ready 1
+
+on property:recovery.service=1 && property:ro.virtual_ab.enabled=true
+    start vendor.boot-hal-1-1
+
+on property:vts_app_recovery.status=run
+    start vts_app_recovery
+    setprop vts_app_recovery.status running
+
+service vndservicemanager /system/bin/vndservicemanager /dev/vndbinder
+    user root
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:recovery:s0
+
+service wait_for_keymaster  /system/bin/wait_for_keymaster
+    disabled
+    user root
+    seclabel u:r:recovery:s0
+
+service qseecomd /vendor/bin/qseecomd
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service keymaster-3-0 /vendor/bin/android.hardware.keymaster@3.0-service-qti
+    disabled
+    user root
+    group root drmrpc
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /vendor/bin/android.hardware.keymaster@4.0-service-qti
+    disabled
+    user root
+    group root drmrpc
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/android.hardware.gatekeeper@1.0-service-qti
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service cryptfshw-1-0 /vendor/bin/vendor.qti.hardware.cryptfshw@1.0-service-qti
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service keystore_auth /system/bin/keystore_auth
+    disabled
+    user system
+    group root system
+    seclabel u:r:recovery:s0
+
+service keystore2 /system/bin/keystore2 /data/misc/keystore
+    disabled
+    user keystore
+    group keystore drmrpc readproc log
+    writepid /dev/cpuset/foreground/tasks
+    seclabel u:r:recovery:s0
+
+service guardianangle  /system/bin/guardianangle
+    disabled
+    user root
+    seclabel u:r:recovery:s0
+
+service vendor.boot-hal-1-1 /vendor/bin/hw/android.hardware.boot@1.1-service
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.boot-hal-1-0 /vendor/bin/hw/android.hardware.boot@1.0-service
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service health-hal-2-0 /vendor/bin/hw/android.hardware.health@2.0-service
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vts_app_recovery /system/bin/vts_app_recovery  --update
+  user system
+  disabled
+  seclabel u:r:recovery:s0
+  oneshot
