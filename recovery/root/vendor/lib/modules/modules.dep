@@ -1,0 +1,69 @@
+/vendor/lib/modules/gf9518.ko: /vendor/lib/modules/fpid.ko /vendor/lib/modules/vivo_ts.ko /vendor/lib/modules/sensors_class.ko
+/vendor/lib/modules/fpc1511.ko: /vendor/lib/modules/fpid.ko /vendor/lib/modules/vivo_ts.ko /vendor/lib/modules/sensors_class.ko
+/vendor/lib/modules/sar_power.ko: /vendor/lib/modules/sarpower_class.ko
+/vendor/lib/modules/mbhc_dlkm.ko:
+/vendor/lib/modules/qcom-qpnp-ti.ko: /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/q6_notifier_dlkm.ko: /vendor/lib/modules/q6_pdr_dlkm.ko
+/vendor/lib/modules/fan53870.ko:
+/vendor/lib/modules/microchip.ko:
+/vendor/lib/modules/cdc_ncm.ko:
+/vendor/lib/modules/fpid.ko: /vendor/lib/modules/vivo_ts.ko /vendor/lib/modules/sensors_class.ko
+/vendor/lib/modules/vivo_aw87339_dlkm.ko: /vendor/lib/modules/vivo_codec_common_dlkm.ko
+/vendor/lib/modules/vivo-chg-mcu.ko: /vendor/lib/modules/vivo-chg-cms.ko /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/qcom-qpnp-qg.ko: /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/vivo_aw882xx_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/vivo_codec_common_dlkm.ko
+/vendor/lib/modules/platform_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/vivo_ts.ko: /vendor/lib/modules/sensors_class.ko
+/vendor/lib/modules/vivo-fuel_summary.ko:
+/vendor/lib/modules/swr_ctrl_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/net1080.ko:
+/vendor/lib/modules/pd_dbg_info.ko:
+/vendor/lib/modules/asix.ko:
+/vendor/lib/modules/wcd937x_slave_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/sensors_class.ko:
+/vendor/lib/modules/q6_pdr_dlkm.ko:
+/vendor/lib/modules/camera.ko:
+/vendor/lib/modules/stub_dlkm.ko:
+/vendor/lib/modules/rmnet_ctl.ko:
+/vendor/lib/modules/gf3658.ko: /vendor/lib/modules/fpid.ko /vendor/lib/modules/vivo_ts.ko /vendor/lib/modules/sensors_class.ko
+/vendor/lib/modules/rdbg.ko:
+/vendor/lib/modules/vivo_tfa9874_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/vivo_codec_common_dlkm.ko
+/vendor/lib/modules/rx_macro_dlkm.ko: /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/vivo-chg-cms.ko: /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/wcd937x_dlkm.ko: /vendor/lib/modules/mbhc_dlkm.ko /vendor/lib/modules/wcd9xxx_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/cdc_ether.ko:
+/vendor/lib/modules/sarpower_class.ko:
+/vendor/lib/modules/q6_dlkm.ko: /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/vivo_tas2562_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/wcd938x_slave_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/btpower.ko:
+/vendor/lib/modules/va_macro_dlkm.ko: /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/apr_dlkm.ko: /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/snd_event_dlkm.ko:
+/vendor/lib/modules/vivo_mb.ko:
+/vendor/lib/modules/qca_cld3_wlan.ko:
+/vendor/lib/modules/wsa881x_analog_dlkm.ko: /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/vivo_codec_common_dlkm.ko:
+/vendor/lib/modules/machine_dlkm.ko: /vendor/lib/modules/wcd938x_dlkm.ko /vendor/lib/modules/wcd937x_dlkm.ko /vendor/lib/modules/mbhc_dlkm.ko /vendor/lib/modules/wcd9xxx_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/vivo_codec_common_dlkm.ko
+/vendor/lib/modules/swr_dlkm.ko:
+/vendor/lib/modules/boardinfo.ko:
+/vendor/lib/modules/bq24192-slave-charger.ko: /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/zaurus.ko: /vendor/lib/modules/cdc_ether.ko
+/vendor/lib/modules/native_dlkm.ko: /vendor/lib/modules/platform_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/ax88179_178a.ko:
+/vendor/lib/modules/bt_fm_slim.ko: /vendor/lib/modules/btpower.ko
+/vendor/lib/modules/adsp_loader_dlkm.ko: /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/lan78xx.ko:
+/vendor/lib/modules/rmnet_offload.ko: /vendor/lib/modules/rmnet_core.ko /vendor/lib/modules/rmnet_ctl.ko
+/vendor/lib/modules/tcpci_late_sync.ko:
+/vendor/lib/modules/pinctrl_lpi_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/bolero_cdc_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/rmnet_core.ko: /vendor/lib/modules/rmnet_ctl.ko
+/vendor/lib/modules/wcd938x_dlkm.ko: /vendor/lib/modules/mbhc_dlkm.ko /vendor/lib/modules/wcd9xxx_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/wcd9xxx_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/tx_macro_dlkm.ko: /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/rmnet_shs.ko: /vendor/lib/modules/rmnet_core.ko /vendor/lib/modules/rmnet_ctl.ko
+/vendor/lib/modules/dwc3-vtcpc.ko: /vendor/lib/modules/bq25890h-charger.ko /vendor/lib/modules/vivo-chg-cms.ko /vendor/lib/modules/vivo-fuel_summary.ko
+/vendor/lib/modules/wcd_core_dlkm.ko:
+/vendor/lib/modules/vivo_fs1599_dlkm.ko: /vendor/lib/modules/vivo_codec_common_dlkm.ko
+/vendor/lib/modules/bq25890h-charger.ko: /vendor/lib/modules/vivo-chg-cms.ko /vendor/lib/modules/vivo-fuel_summary.ko

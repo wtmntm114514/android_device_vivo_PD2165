@@ -39,14 +39,13 @@ TARGET_OTA_ASSERT_DEVICE := PD2165,PD2165A,PD2165B,PD2165C
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := qssi
 TARGET_NO_BOOTLOADER := true
-TARGET_USES_UEFI := true
 
 # Display
 TARGET_SCREEN_DENSITY := 480
 
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 3
-BOARD_KERNEL_CMDLINE := console=null earlycon=null androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=4e00000.dwc3 swiotlb=0 loop.max_part=7 cgroup.memory=nokmem,nosocket iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1 product.version=PD2165_A_12.0.13.15.W10 fingerprint.abbr=11/RP1A.200720.012 region_ver=W10 product.solution=QCOM buildvariant=user androidboot.securebootkeyhash=2c0a52ffbd8db687b56f6a98d8840f46597a4dde6d9dc8d00039873ce6d74f60 androidboot.securebootkeyver=4
+BOARD_KERNEL_CMDLINE := console=null earlycon=null androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=4e00000.dwc3 swiotlb=0 loop.max_part=7 cgroup.memory=nokmem,nosocket iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1 product.version=PD2165_A_12.0.13.15.W10 fingerprint.abbr=11/RP1A.200720.012 region_ver=W10 product.solution=QCOM buildvariant=user androidboot.securebootkeyhash=2c0a52ffbd8db687b56f6a98d8840f46597a4dde6d9dc8d00039873ce6d74f60 androidboot.securebootkeyver=4 androidboot.selinux=disable twrp=1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := PD2165_defconfig
@@ -76,6 +75,7 @@ TARGET_BOARD_PLATFORM := qssi
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -105,6 +105,7 @@ TW_USE_TOOLBOX := true
 # TWRP specific build flags
 TW_DEVICE_VERSION=IQOOU5-PD2165-A12-@wtmntm
 RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_SUPPORT_INPUT_1_2_HAPTICS := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"

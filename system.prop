@@ -1,5 +1,7 @@
-ro.vendor.vivo.product.model=PD2156
-ro.vivo.product.model=PD2156
-ro.vivo.hardware.version=PD2156MA
-ro.hardware.bbk=PD2156MA
+ro.vendor.vivo.product.model=PD2165
+ro.vivo.product.model=PD2165
+ro.vivo.hardware.version=PD2165MA
+ro.hardware.bbk=PD2165MA
 ro.vivo.os.version=13.0
+ro.adb.secure=0
+ro.boot.selinux=disable
