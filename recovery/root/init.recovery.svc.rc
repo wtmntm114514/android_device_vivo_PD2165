@@ -4,7 +4,7 @@ on early-init
     mkdir /mnt/vendor
     mkdir /mnt/vendor/persist
     chown root system /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
+    chmod 0777 /mnt/vendor/persist
     symlink /mnt/vendor/persist /persist
     mkdir /system/etc/selinux
     symlink /plat_keystore2_key_contexts /system/etc/selinux/plat_keystore2_key_contexts
@@ -65,9 +65,9 @@ on late-init
     # issued fs triggers have completed.
 
 service logd /system/bin/logd
-    socket logd stream 0666 logd logd
-    socket logdr seqpacket 0666 logd logd
-    socket logdw dgram+passcred 0222 logd logd
+    socket logd stream 0777 logd logd
+    socket logdr seqpacket 0777 logd logd
+    socket logdw dgram+passcred 0777 logd logd
     file /proc/kmsg r
     file /dev/kmsg w
     user root
@@ -103,9 +103,9 @@ service hwservicemanager /system/bin/hwservicemanager
 service tombstoned /system/bin/tombstoned
     user root
     group root
-    socket tombstoned_crash seqpacket 0666 system system
-    socket tombstoned_intercept seqpacket 0666 system system
-    socket tombstoned_java_trace seqpacket 0666 system system
+    socket tombstoned_crash seqpacket 0777 system system
+    socket tombstoned_intercept seqpacket 0777 system system
+    socket tombstoned_java_trace seqpacket 0777 system system
     writepid /dev/cpuset/system-background/tasks
     seclabel u:r:recovery:s0
 
