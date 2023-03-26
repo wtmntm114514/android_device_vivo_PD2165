@@ -4,4 +4,6 @@ ro.vivo.hardware.version=PD2165MA
 ro.hardware.bbk=PD2165MA
 ro.vivo.os.version=13.0
 ro.adb.secure=0
+ro.debuggable=1
 ro.boot.selinux=permissive
+ro.treble.enabled=true
