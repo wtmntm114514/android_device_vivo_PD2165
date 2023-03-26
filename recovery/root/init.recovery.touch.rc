@@ -163,7 +163,8 @@ on boot
 	chown system /sys/class/vts/vivo_ts_second/status/virt_prox_enable
 	start touchupdate
 	start touchaddpanel
-
+    setprop sys.usb.config adb
+    
 service touchupdate /system/bin/vts_app_recovery --update
 	class core
 	user system
