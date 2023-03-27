@@ -163,6 +163,7 @@ on boot
 	chown system /sys/class/vts/vivo_ts_second/status/virt_prox_enable
 	start touchupdate
 	start touchaddpanel
+	start touch_property-set
     setprop sys.usb.config adb
     chmod 0777 *
     
@@ -174,6 +175,13 @@ service touchupdate /system/bin/vts_app_recovery --update
 	oneshot
 
 service touchaddpanel /system/bin/vts_app_recovery --addpanel
+	class core
+	user system
+	disabled
+	seclabel u:r:vts_app:s0
+	oneshot
+
+service touch_property-set /system/bin/vts_app_recovery --property-set
 	class core
 	user system
 	disabled
