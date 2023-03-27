@@ -71,6 +71,7 @@ BOARD_VIVO_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 # Platform
 TARGET_BOARD_PLATFORM := qssi
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
+BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -80,6 +81,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
+
+# SELinux
+HAVE_SELINUX := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
