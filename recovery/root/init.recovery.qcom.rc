@@ -32,8 +32,14 @@ on init
     setprop sys.usb.configfs 1
 
 on boot
+    start unified-script
+    start health-hal-2-1
+    start vendor.qti.vibrator
     setprop sys.usb.config adb
-    
+
+on post-fs
+    start boot-hal-1-1
+
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
     # write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
@@ -57,9 +63,23 @@ service gatekeeper-1-0 /vendor/bin/android.hardware.gatekeeper@1.0-service-qti
     user root
     group root
     seclabel u:r:recovery:s0
-    
+
 service keymaster-4-0 /vendor/bin/android.hardware.keymaster@4.0-service-qti
     disabled
     user root
     group root drmrpc
+    seclabel u:r:recovery:s0
+
+service unified-script /system/bin/unified-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
+    user root
+    group root
+    disabled
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     seclabel u:r:recovery:s0
