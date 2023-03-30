@@ -24,62 +24,15 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-import /init.recovery.touch.rc
-import /init.recovery.platform.rc
 
 on init
-    write /sys/class/backlight/panel0-backlight/brightness 255
+    write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
-
-on boot
-    start unified-script
-    start health-hal-2-1
-    start vendor.qti.vibrator
-    setprop sys.usb.config adb
-
-on post-fs
-    start boot-hal-1-1
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
     # write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
 
 on fs
-    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    chmod 0777 /dev/qseecom
-    chown system drmrpc /dev/qseecom
-    chmod 0777 /dev/ion
-    chown system system /dev/ion
-    install_keyring
-
-on property:vendor.sys.listeners.registered=true
-    start keymaster-4-0
-    start gatekeeper-1-0
-
-service gatekeeper-1-0 /vendor/bin/android.hardware.gatekeeper@1.0-service-qti
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-service keymaster-4-0 /vendor/bin/android.hardware.keymaster@4.0-service-qti
-    disabled
-    user root
-    group root drmrpc
-    seclabel u:r:recovery:s0
-
-service unified-script /system/bin/unified-script.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
-service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
-    user root
-    group root
-    disabled
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
-    seclabel u:r:recovery:s0

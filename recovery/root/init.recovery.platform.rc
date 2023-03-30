@@ -1,9 +1,6 @@
 on early-boot
     start qseecomd
     start cryptfshw-1-0
-    
-    setprop recovery.charger_battery 1
-    
     insmod /vendor/lib/modules/vivo-fuel_summary.ko
     insmod /vendor/lib/modules/vivo-chg-cms.ko
     insmod /vendor/lib/modules/bq25890h-charger.ko
@@ -14,27 +11,12 @@ on early-boot
     insmod /vendor/lib/modules/sensors_class.ko
     insmod /vendor/lib/modules/vivo_mb.ko
     insmod /vendor/lib/modules/vivo_ts.ko
-    insmod /vendor/lib/modules/vivo-chg-mcu.ko
-    
+
 #vivo dash add for init.recovery.touch.rc begin
 #on boot
 #    start vts_app_recovery
 #vivo dash add for init.recovery.touch.rc end
 
-on property:recovery.charger_battery=1 && property:ro.virtual_ab.enabled=""
-    # mount modem here.
-    # mount_all /vendor/etc/charger_fw_fstab.qti --early
-    mount vfat /dev/block/bootdevice/by-name/modem /vendor/firmware_mnt ro barrier=1 discard
-    # exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules q6_pdr_dlkm q6_notifier_dlkm snd_event_dlkm apr_dlkm adsp_loader_dlkm
-    # kernel-5.4 charger need start ADSP and then read the SOC
-    insmod /vendor/lib/modules/q6_pdr_dlkm.ko
-    insmod /vendor/lib/modules/q6_notifier_dlkm.ko
-    insmod /vendor/lib/modules/snd_event_dlkm.ko
-    insmod /vendor/lib/modules/apr_dlkm.ko
-    insmod /vendor/lib/modules/adsp_loader_dlkm.ko
-    write /sys/kernel/boot_adsp/boot 1
-    wait /sys/class/power_supply/battery
-    
 # just boot in fastboot mode, fastbootd service need vendor.boot-hal-1-0 & health-hal-2-0
 on property:recovery.fastboot_mode=1
     start vendor.boot-hal-1-0
@@ -121,7 +103,6 @@ service vendor.boot-hal-1-1 /vendor/bin/hw/android.hardware.boot@1.1-service
     seclabel u:r:recovery:s0
 
 service vendor.boot-hal-1-0 /vendor/bin/hw/android.hardware.boot@1.0-service
-    interface android.hardware.boot@1.0::IBootControl default
     disabled
     user root
     group root
