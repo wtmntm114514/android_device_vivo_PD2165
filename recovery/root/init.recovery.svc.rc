@@ -147,3 +147,5 @@ service crash_log /system/bin/little_buddy --crash_log
 
 on property:recovery.svc.start.copy_log=1
     start crash_log
+
+import /init.recovery.platform.rc

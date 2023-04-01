@@ -119,3 +119,5 @@ service vts_app_recovery /system/bin/vts_app_recovery  --update
   disabled
   seclabel u:r:recovery:s0
   oneshot
+
+import /init.recovery.touch.rc
