@@ -1,5 +1,7 @@
 on early-boot
+    setenforce 0
     start qseecomd
+    install_keyring
     start cryptfshw-1-0
     insmod /vendor/lib/modules/vivo-fuel_summary.ko
     insmod /vendor/lib/modules/vivo-chg-cms.ko
